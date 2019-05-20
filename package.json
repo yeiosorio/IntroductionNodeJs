@@ -1,0 +1,14 @@
+{
+        "name": "IntroductionNodeJs",
+        "version": "1.0.0",
+        "description": "introduccion a node js por parte del tecnologico de antioquia",
+        "main": "index.js",
+        "keywords": [
+                "Introduction node js"
+        ],
+        "author": "yeison osorio",
+        "dependencies": {
+                "nodemon": "^1.19.0",
+                "yargs": "^13.2.4"
+        }
+}
