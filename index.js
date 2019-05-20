@@ -1,4 +1,5 @@
-
+let cursos = [];
+let delay = 2000;
 const opciones = {
     id_asignatura: {
         alias: 'asig',
@@ -14,23 +15,46 @@ const opciones = {
     }
 }
 
-const cursos = require('./data.js');
+
+ cursos = [
+    {
+        id: 1,
+        nombre: 'matematicas',
+        duracion: '1 mes',
+        valor: 100000
+    },
+    {
+        id: 2,
+        nombre: 'ingles',
+        duracion: '1 mes',
+        valor: 100000
+    },
+    {
+        id: 3,
+        nombre: 'fisica',
+        duracion: '2 mes',
+        valor: 500000
+    }
+]
+
 const fs = require('fs');
 const argv = require('yargs')
  .command('inscribir', 'Inscribase a un curso', opciones)
  .argv;
 
-const printCourses = (obj, time, callback) => {
+const printCourses = (obj, delay, callback) => {
     setTimeout(function () {
         callback(`El curso se llama: ${obj.nombre}, tiene asignado el id: ${obj.id}, su duración es de: ${obj.duracion} y tiene un costo de: ${obj.valor}.`)
-    }, time);
+    }, delay);
 }
 
 let generateFile = (curso, argv) => {
 
-   let body = `El estudiante ${argv.nombre_estudiante} con identificacion ${argv.documento_estudiante}, 
-   se prematriculo para el siguiente curso ${asignatura.nombre} con el identificador ${asignatura.id},
-    la duración de dicho curso sera de ${asignatura.duracion} y el valor es de ${asignatura.precio} pesos.`;
+   let body = `El estudiante ${argv.nom} con identificacion ${argv.doc}, 
+se prematriculo para el curso de ${curso.nombre} 
+con el identificador ${curso.id},
+la duración de dicho curso sera de ${curso.duracion}
+y el valor es de ${curso.valor} pesos.`;
 
     fs.writeFile('inscripcion.txt', body, (err) => {
         if (err) throw (err);
@@ -39,16 +63,19 @@ let generateFile = (curso, argv) => {
 }
 
 //Si no se ingreso un argumento se listan todos lo cursos
-if (argv.id_asignatura === undefined) {
+
+if (argv.asig === undefined) {
     for (let i = 0; i < cursos.length; i++) {
-        printCourses(cursos[i], 2000, (resultado) => {
+        printCourses(cursos[i], delay, (resultado) => {
             console.log(resultado);
         });
+
+        delay += 2000;
        
     }
 } else {
     //Se busca el id del curso
-    let curso = cursos.find(obj => obj.id === argv.id_asignatura);
+    let curso = cursos.find(obj => obj.id === argv.asig);
     //Si es indefinido
     if (curso === undefined) {
         console.log('Se ingreso un id de asignatura incorrecto.')

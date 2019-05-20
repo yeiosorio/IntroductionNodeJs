@@ -1,4 +1,5 @@
-const cursos = [
+let cursos = [];
+ cursos = [
     {
         id: 1,
         nombre: 'matematicas',

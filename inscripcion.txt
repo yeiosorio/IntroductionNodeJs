@@ -1,0 +1,5 @@
+El estudiante yeison con identificacion 3456, 
+se prematriculo para el curso de matematicas 
+con el identificador 1,
+la duración de dicho curso sera de 1 mes
+y el valor es de 100000 pesos.
