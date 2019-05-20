@@ -17,7 +17,7 @@ const opciones = {
 const cursos = require('./data.js');
 const fs = require('fs');
 const argv = require('yargs')
- .command('inscribir', 'Inscribase a una asignatura', opciones)
+ .command('inscribir', 'Inscribase a un curso', opciones)
  .argv;
 
 const printCourses = (obj, time, callback) => {
