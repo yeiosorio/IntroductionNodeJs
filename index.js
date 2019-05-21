@@ -64,25 +64,31 @@ y el valor es de ${curso.valor} pesos.`;
 
 //Si no se ingreso un argumento se listan todos lo cursos
 
-if (argv.asig === undefined) {
-    for (let i = 0; i < cursos.length; i++) {
-        printCourses(cursos[i], delay, (resultado) => {
-            console.log(resultado);
-        });
+if (argvs.asig && argvs.nom && argvs.doc) {
+   
+    if (argv.asig === undefined) {
+        for (let i = 0; i < cursos.length; i++) {
+            printCourses(cursos[i], delay, (resultado) => {
+                console.log(resultado);
+            });
 
-        delay += 2000;
-       
-    }
-} else {
-    //Se busca el id del curso
-    let curso = cursos.find(obj => obj.id === argv.asig);
-    //Si es indefinido
-    if (curso === undefined) {
-        console.log('Se ingreso un id de asignatura incorrecto.')
+            delay += 2000;
+        
+        }
     } else {
-        //En caso contrario se escribe el archivo con la preinscripcipon
-       generateFile(curso, argv);
+        //Se busca el id del curso
+        let curso = cursos.find(obj => obj.id === argv.asig);
+        //Si es indefinido
+        if (curso != undefined) {
+            //En caso contrario se escribe el archivo con la preinscripcion
+            generateFile(curso, argv);
+        } else {
+            console.log('Se ingreso un id de asignatura incorrecto.')
+        
+        }
     }
+}else{
+    console.log('Los 3 parametros asig, nom, y doc son obligatorios')
 }
 
  
