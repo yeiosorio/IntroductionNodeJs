@@ -12,10 +12,36 @@
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  type="text/css">
 </head>
 <body>
-
+ <nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Cursos TdeA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Inicio
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ingresarCurso">Ingresar Curso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/listarCursos">Ver Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/inscripcion">Inscripción</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
    <div class="row">
       <div class="col-lg-12">
-        <h1 class="mt-5">Listado de Cursos disponibles</h1>
+        <h1 class="mt-5"  style="width: 60%; margin: auto;">Listado de Cursos</h1>
         
       </div>
     </div>
@@ -23,7 +49,7 @@
 
 <div class="row">
       <div class="col-lg-12">
-        <table class="table table-hover">
+        <table class="table table-hover"  style="width: 60%; margin: auto;">
             <thead>
                 <tr>
                 <th>Nombre</th>
