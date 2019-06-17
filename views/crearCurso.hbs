@@ -1,0 +1,89 @@
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+   
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  type="text/css">
+</head>
+<body>
+
+      <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Curso</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Inicio
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ingresarCurso">Ingresar Curso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/listarCursos">Ver Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/inscripcion">Inscripción</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="mt-5" style="text-align: center;">Nuevo Curso</h1>
+            <form method="POST" action="/guardarCurso" style="width: 60%; margin: auto;">
+                <div class="form-group">
+                    <label for="id">Id. Curso * </label>
+                    <input type="number" class="form-control" id="id" name="id" placeholder="Id curso" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombreCurso">Nombre *</label>
+                    <input type="text" class="form-control" id="nombreCurso" name="nombreCurso" placeholder="Nombre del curso" required>
+                </div>
+                <div class="form-group">
+                    <label for="valorCurso">Valor *</label>
+                    <input type="number" class="form-control" id="valorCurso" name="valorCurso" placeholder="Valor del curso"  required>
+                </div>
+
+                <div class="form-group">
+                    <label for="modalidadCurso">Modaliad</label>
+                    <select class="form-control" id="modalidadCurso" name="modalidadCurso">
+                        <option></option>
+                        <option value="virtual">Virtual</option>
+                        <option value="presencial">Presencial</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="intensidad">Intensidad Horaria</label>
+                    <input type="number" class="form-control" id="intensidad" name="intensidad" placeholder="horas"  required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcionCurso">Descripción *</label>
+                    <textarea id="descripcionCurso" name="descripcionCurso"  class="form-control" required></textarea>
+                </div>
+                <button  class="btn btn-primary">Guardar Curso</button>
+            </form>
+        </div>
+        </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
